@@ -1,0 +1,133 @@
+:root{ /*campo n css onde é possível criar variáveis e lhes atribuir valoress*/
+    --font-family: 'Roboto', sans-serif;
+    --font-size: 16px;
+    --gray-100: #efefef;
+    --gray-900: #25252b;
+    --white-900: #fff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box; /*o tamanho é definido pelas bordas*/
+}
+
+a {
+    color: inherit; /*herança*/
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    background-color: var(--gray-100);
+
+}
+
+.container {
+    width: 1200px;
+    max-width: 100%; /*para não quebrar e tirar a barra de rolagem*/
+    padding: 0 2rem; /*0 cima e baixo 2% do valor padrão do navagador nas laterais*/
+    margin: auto; /*vai alinhar o conteiner ao centro*/
+    
+}
+
+/*<---------------------HEADER----------------------------->*/
+.header{
+    background-color: var(--gray-900);
+    text-align: center; /*centraliza o conteúdo dentro da header*/
+    height: 8rem;
+}
+
+.pokemon__logo {
+    width: 300px;
+}
+
+/*<---------------------POKEBOLA--------------------->*/
+.pokebola{
+    width: 250px;
+}
+.pokebola__image {
+    width: 100%;
+    cursor: pointer;
+    filter: drop-shadow(15px 15px 15px hsl(76deg 0% 0% /0.5)); /*efeito de sombra em volta da poébola*/
+}
+
+.pokebola__image:active{
+    animation: shake 0.1s; /*chama a animação shake, dura 0.1 segundo cada keyframe*/
+    animation-iteration-count: 200; /*quantas vezes a animação será executada*/
+}
+
+@keyframes shake {
+    0% {margin-left: 0;} /*0% do tempo da animação**/
+    25% {margin-left: 10px;} /*25% do tempo*/
+    50% {margin-left: 0;}/*50% do tempo*/
+    75% {margin-left: -10;}
+    100% {margin-left: 0 ;}
+}
+/*<==============Poestop==============>*/
+
+.pokestop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /*realiza a quebra de linhas no mobile*/
+
+    padding: 2rem 0; /*padding de 1rem em cima e baixo*/
+    min-height: calc(100vh - 8rem - 52px);
+
+}
+
+/*<-------------- pokémon --------------*/
+.pokemon{
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    flex-wrap: wrap; /*faz uma quebra de lnhas entre os elementos*/
+    gap: 1rem;
+    background: linear-gradient(45deg, #ffeb3b, #ff9800);
+    color: var(--white-900);
+    padding: 1rem;
+    border-radius: 10px;
+    width: 500px;
+    max-width: 100%;
+    filter: drop-shadow(15px 15px 15px hsl(76deg 0% 0% /0.5));
+}
+
+.pokemon__wrapperImage{
+    width: 250px;
+    height: 250px;
+    background-color: var(--gray-100);
+    border-radius: 50%;
+
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemon__image{
+    width: 100%;
+    filter: drop-shadow(15px 15px 15px hsl(76deg 0% 0% /0.5))
+}
+
+.pokemon__name{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.pokemon__abilities{
+    text-transform: capitalize;
+    margin-left: 18px;
+
+}
+/*-------------RODAPÉ---------------*/
+.footer {
+    background-color: var(--gray-900);
+    color: var(--white-900);
+    text-align: center;
+    padding: 1rem 0;
+    height: 52px;
+    text-transform: uppercase;
+}
